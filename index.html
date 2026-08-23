@@ -126,8 +126,17 @@ footer{
 </div>
 
 <footer>
- Meu App IPTV • Versão 1.0
+  Meu App IPTV • Versão 1.0
 </footer>
+
+<script>
+document.querySelectorAll(".card").forEach(card => {
+  card.addEventListener("click", () => {
+    const categoria = card.querySelector(".nome").innerText;
+    alert("Você selecionou: " + categoria);
+  });
+});
+</script>
 
 </body>
 </html>
