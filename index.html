@@ -1,108 +1,133 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu App IPTV</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Meu App IPTV</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #101010;
-      color: white;
-    }
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#090909;
+ color:white;
+}
+header{
+ padding:28px 20px;
+ text-align:center;
+ background:linear-gradient(135deg,#111,#202020);
+ border-bottom:1px solid #292929;
+}
+.logo{font-size:48px}
+h1{margin:5px 0;font-size:30px}
+.sub{color:#aaa;font-size:15px}
 
-    header {
-      padding: 25px 20px;
-      text-align: center;
-      background: #181818;
-    }
+.container{padding:24px 16px}
+.titulo{
+ font-size:24px;
+ font-weight:bold;
+ margin-bottom:18px;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:14px;
+}
+.card{
+ background:linear-gradient(145deg,#202020,#151515);
+ border:1px solid #292929;
+ border-radius:18px;
+ padding:24px 10px;
+ text-align:center;
+ min-height:145px;
+ transition:.2s;
+}
+.card:active{transform:scale(.97)}
+.icon{font-size:45px;margin-bottom:12px}
+.nome{font-size:17px;font-weight:bold}
+.info{
+ margin-top:28px;
+ padding:18px;
+ border-radius:16px;
+ background:#151515;
+ border:1px solid #282828;
+}
+.info h2{margin-top:0;font-size:19px}
+.info p{color:#aaa;line-height:1.5}
 
-    h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    .subtitulo {
-      color: #aaa;
-      margin-top: 8px;
-    }
-
-    .container {
-      padding: 20px;
-    }
-
-    .categoria {
-      font-size: 20px;
-      margin: 25px 0 12px;
-    }
-
-    .canais {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .canal {
-      background: #202020;
-      border-radius: 12px;
-      padding: 20px 10px;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .canal:hover {
-      background: #303030;
-    }
-
-    .icone {
-      font-size: 35px;
-      margin-bottom: 8px;
-    }
-
-    .nome {
-      font-weight: bold;
-    }
-  </style>
+.status{
+ display:inline-block;
+ margin-top:8px;
+ padding:5px 10px;
+ border-radius:20px;
+ background:#183b22;
+ color:#72e28a;
+ font-size:12px;
+}
+footer{
+ text-align:center;
+ padding:30px 10px;
+ color:#777;
+ font-size:12px;
+}
+@media(max-width:380px){
+ .grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>📺 Meu App IPTV</h1>
-    <div class="subtitulo">Sua programação em um só lugar</div>
-  </header>
+<header>
+ <div class="logo">📺</div>
+ <h1>Meu App IPTV</h1>
+ <div class="sub">Sua programação em um só lugar</div>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <div class="categoria">📡 Canais</div>
+ <div class="titulo">Categorias</div>
 
-    <div class="canais">
+ <div class="grid">
 
-      <div class="canal">
-        <div class="icone">📺</div>
-        <div class="nome">Canal 1</div>
-      </div>
-
-      <div class="canal">
-        <div class="icone">📺</div>
-        <div class="nome">Canal 2</div>
-      </div>
-
-      <div class="canal">
-        <div class="icone">🎬</div>
-        <div class="nome">Filmes</div>
-      </div>
-
-      <div class="canal">
-        <div class="icone">⚽</div>
-        <div class="nome">Esportes</div>
-      </div>
-
-    </div>
-
+  <div class="card">
+   <div class="icon">🔴</div>
+   <div class="nome">Ao Vivo</div>
+   <div class="status">ONLINE</div>
   </div>
+
+  <div class="card">
+   <div class="icon">🎬</div>
+   <div class="nome">Filmes</div>
+  </div>
+
+  <div class="card">
+   <div class="icon">📺</div>
+   <div class="nome">Séries</div>
+  </div>
+
+  <div class="card">
+   <div class="icon">⚽</div>
+   <div class="nome">Esportes</div>
+  </div>
+
+ </div>
+
+ <div class="info">
+  <h2>📡 Canais ao vivo</h2>
+  <p>
+   Aqui ficará a programação ao vivo. 
+   Podemos adicionar canais e fontes de transmissão
+   autorizadas posteriormente.
+  </p>
+ </div>
+
+</div>
+
+<footer>
+ Meu App IPTV • Versão 1.0
+</footer>
 
 </body>
 </html>
