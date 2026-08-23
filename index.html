@@ -135,17 +135,31 @@ document.querySelectorAll(".card").forEach(card => {
     const categoria = card.querySelector(".nome").textContent.trim();
     const info = document.querySelector(".info");
 
-    info.innerHTML = `
-      <h2>📺 ${categoria}</h2>
-      <p>Você selecionou a categoria <strong>${categoria}</strong>.</p>
-      <p>Conteúdo autorizado será adicionado aqui.</p>
-    `;
+   if (categoria === "Ao Vivo") {
+  info.innerHTML = `
+    <h2>📺 Canais ao Vivo</h2>
+    <p>Escolha um canal autorizado para testar.</p>
 
-    info.scrollIntoView({
-      behavior: "smooth"
-    });
-  });
+    <div class="canal">
+      <h3>🟢 Canal de Teste</h3>
+      <p>Transmissão de demonstração.</p>
+      <button onclick="alert('Player de teste funcionando!')">
+        ▶️ Assistir
+      </button>
+    </div>
+  `;
+} else {
+  info.innerHTML = `
+    <h2>📺 ${categoria}</h2>
+    <p>Esta seção será adicionada ao aplicativo.</p>
+  `;
+  info.scrollIntoView({
+  behavior: "smooth"
 });
+});
+}); 
+
+ 
 </script>
                                       
 
