@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu App IPTV</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #101010;
+      color: white;
+    }
+
+    header {
+      padding: 25px 20px;
+      text-align: center;
+      background: #181818;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .subtitulo {
+      color: #aaa;
+      margin-top: 8px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .categoria {
+      font-size: 20px;
+      margin: 25px 0 12px;
+    }
+
+    .canais {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .canal {
+      background: #202020;
+      border-radius: 12px;
+      padding: 20px 10px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .canal:hover {
+      background: #303030;
+    }
+
+    .icone {
+      font-size: 35px;
+      margin-bottom: 8px;
+    }
+
+    .nome {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>📺 Meu App IPTV</h1>
+    <div class="subtitulo">Sua programação em um só lugar</div>
+  </header>
+
+  <div class="container">
+
+    <div class="categoria">📡 Canais</div>
+
+    <div class="canais">
+
+      <div class="canal">
+        <div class="icone">📺</div>
+        <div class="nome">Canal 1</div>
+      </div>
+
+      <div class="canal">
+        <div class="icone">📺</div>
+        <div class="nome">Canal 2</div>
+      </div>
+
+      <div class="canal">
+        <div class="icone">🎬</div>
+        <div class="nome">Filmes</div>
+      </div>
+
+      <div class="canal">
+        <div class="icone">⚽</div>
+        <div class="nome">Esportes</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
