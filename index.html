@@ -129,39 +129,25 @@ footer{
   Meu App IPTV • Versão 1.0
 </footer>
 
-<script
+<script>
 document.querySelectorAll(".card").forEach(card => {
   card.addEventListener("click", () => {
-    const categoria = card.querySelector(".nome").innerText;
+    const categoria = card.querySelector(".nome").textContent.trim();
     const info = document.querySelector(".info");
 
-    if (categoria === "Ao Vivo") {
-      info.innerHTML = `
-        <h2>📺 Canais ao Vivo</h2>
-        <p>Selecione um canal autorizado para assistir.</p>
+    info.innerHTML = `
+      <h2>📺 ${categoria}</h2>
+      <p>Você selecionou a categoria <strong>${categoria}</strong>.</p>
+      <p>Conteúdo autorizado será adicionado aqui.</p>
+    `;
 
-        <div class="canal">
-          <h3>🟢 Canal de Teste</h3>
-          <p>Transmissão de demonstração</p>
-          <button onclick="alert('Fonte de teste selecionada')">
-            Assistir
-          </button>
-        </div>
-      `;
-    } else {
-      info.innerHTML = `
-        <h2>${categoria}</h2>
-        <p>Esta seção será adicionada ao aplicativo em breve.</p>
-      `;
-    }
-
-    window.scrollTo({
-      top: info.offsetTop,
+    info.scrollIntoView({
       behavior: "smooth"
     });
   });
 });
-  </script>                                         </script>
+</script>
+                                      
 
 </body>
 </html>
