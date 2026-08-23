@@ -153,11 +153,11 @@ document.querySelectorAll(".card").forEach(card => {
     <h2>📺 ${categoria}</h2>
     <p>Esta seção será adicionada ao aplicativo.</p>
   `;
-  info.scrollIntoView({
+window.scrollTo({
+  top: info.offsetTop - 20,
   behavior: "smooth"
+});  
 });
-});
-}); 
 
  
 </script>
