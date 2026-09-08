@@ -130,37 +130,50 @@ footer{
 </footer>
 
 <script>
-document.querySelectorAll(".card").forEach(card => {
-  card.addEventListener("click", () => {
-    const categoria = card.querySelector(".nome").textContent.trim();
-    const info = document.querySelector(".info");
+document.addEventListener("click", function(event) {
 
-   if (categoria === "Ao Vivo") {
-  info.innerHTML = `
-    <h2>📺 Canais ao Vivo</h2>
-    <p>Escolha um canal autorizado para testar.</p>
+  const card = event.target.closest(".card");
 
-    <div class="canal">
-      <h3>🟢 Canal de Teste</h3>
-      <p>Transmissão de demonstração.</p>
-      <button onclick="alert('Player de teste funcionando!')">
-        ▶️ Assistir
-      </button>
-    </div>
-  `;
-} else {
-  info.innerHTML = `
-    <h2>📺 ${categoria}</h2>
-    <p>Esta seção será adicionada ao aplicativo.</p>
-  `; }
-window.scrollTo({
-  top: info.offsetTop - 20,
-  behavior: "smooth"
-});  
+  if (!card) return;
+
+  const categoria = card.querySelector(".nome").textContent.trim();
+  const info = document.querySelector(".info");
+
+  if (!info) return;
+
+  if (categoria === "Ao Vivo") {
+
+    info.innerHTML = `
+      <h2>📺 Canais ao Vivo</h2>
+      <p>Escolha um canal autorizado para assistir.</p>
+
+      <div class="canal">
+        <h3>🟢 Canal de Teste</h3>
+        <p>Transmissão de demonstração.</p>
+        <button onclick="alert('Player de teste')">
+          ▶️ Assistir
+        </button>
+      </div>
+    `;
+
+  } else {
+
+    info.innerHTML = `
+      <h2>📺 ${categoria}</h2>
+      <p>Esta seção será adicionada ao aplicativo em breve.</p>
+    `;
+
+  }
+
+  info.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
 });
-
- 
 </script>
+
+
                                       
 
 </body>
