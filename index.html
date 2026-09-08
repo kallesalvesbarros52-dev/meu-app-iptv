@@ -141,20 +141,40 @@ document.addEventListener("click", function(event) {
 
   if (!info) return;
 
-  if (categoria === "Ao Vivo") {
+if (categoria === "Ao Vivo") {
 
     info.innerHTML = `
-      <h2>📺 Canais ao Vivo</h2>
-      <p>Escolha um canal autorizado para assistir.</p>
+        <h2>📺 Canais ao Vivo</h2>
+        <p>Escolha um canal para assistir.</p>
 
-      <div class="canal">
-        <h3>🟢 Canal de Teste</h3>
-        <p>Transmissão de demonstração.</p>
-        <button onclick="alert('Player de teste')">
-          ▶️ Assistir
-        </button>
-      </div>
+        <div class="canal">
+            <h3>🟢 Canal 1</h3>
+            <p>Transmissão ao vivo</p>
+            <button onclick="abrirCanal('COLOQUE_AQUI_O_LINK_DO_CANAL')">
+                ▶️ Assistir
+            </button>
+        </div>
+
+        <div class="canal">
+            <h3>🔵 Canal 2</h3>
+            <p>Transmissão ao vivo</p>
+            <button onclick="abrirCanal('COLOQUE_AQUI_O_LINK_DO_CANAL')">
+                ▶️ Assistir
+            </button>
+        </div>
+
+        <div class="canal">
+            <h3>🟠 Canal 3</h3>
+            <p>Transmissão ao vivo</p>
+            <button onclick="abrirCanal('COLOQUE_AQUI_O_LINK_DO_CANAL')">
+                ▶️ Assistir
+            </button>
+        </div>
     `;
+
+}  
+
+
 
   } else {
 
@@ -171,6 +191,14 @@ document.addEventListener("click", function(event) {
   });
 
 });
+ function abrirCanal(url) {
+    if (!url || url.includes("COLOQUE_AQUI")) {
+        alert("Link do canal ainda não configurado.");
+        return;
+    }
+
+    window.open(url, "_blank");
+}
 </script>
 
 
