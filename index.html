@@ -130,6 +130,62 @@ footer{
 </footer>
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const cards = document.querySelectorAll(".card");
+  const info = document.querySelector(".info");
+
+  cards.forEach(function (card) {
+
+    card.onclick = function () {
+
+      const categoria = card.querySelector(".nome").textContent.trim();
+
+      if (categoria === "Ao Vivo") {
+
+        info.innerHTML = `
+          <h2>📺 Canais ao Vivo</h2>
+          <p>Escolha um canal para assistir.</p>
+
+          <div class="canal">
+            <h3>🟢 Canal 1</h3>
+            <p>Transmissão ao vivo</p>
+            <button>▶️ Assistir</button>
+          </div>
+
+          <div class="canal">
+            <h3>🔵 Canal 2</h3>
+            <p>Transmissão ao vivo</p>
+            <button>▶️ Assistir</button>
+          </div>
+
+          <div class="canal">
+            <h3>🟠 Canal 3</h3>
+            <p>Transmissão ao vivo</p>
+            <button>▶️ Assistir</button>
+          </div>
+        `;
+
+      } else {
+
+        info.innerHTML = `
+          <h2>📺 ${categoria}</h2>
+          <p>Esta seção será adicionada ao aplicativo.</p>
+        `;
+
+      }
+
+      info.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    };
+
+  });
+
+});
+</script>
 document.addEventListener("click", function(event) {
 
   const card = event.target.closest(".card");
@@ -191,14 +247,7 @@ if (categoria === "Ao Vivo") {
   });
 
 });
- function abrirCanal(url) {
-    if (!url || url.includes("COLOQUE_AQUI")) {
-        alert("Link do canal ainda não configurado.");
-        return;
-    }
 
-    window.open(url, "_blank");
-}
 </script>
 
 
